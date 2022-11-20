@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD.Shared.Core.Shared.Contracts
+namespace DDD.Shared.Core.Shared.Contracts.Aggregate
 {
-    public interface IDomainEvent
+    public interface IEvent
     {
-        DateTime OccorredOn { get; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DDD.Shared.Core.Shared.Contracts;
+﻿using DDD.Shared.Core.Shared.Contracts.Aggregate;
+using DDD.Shared.Core.Shared.Contracts.Events;
 using DDD.Shared.Core.Shared.Notifications;
 using Shared.Core.Messages;
 using System;

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD.Shared.Core.Shared.Entity
+namespace DDD.Shared.Core.Shared.Contracts.Events
 {
-    internal interface IAggregateRoot
+    internal interface IDomainService
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD.Shared.Core.Shared.Contracts
+namespace DDD.Shared.Core.Shared.Contracts.Events
 {
     public interface IDomainEventPublisher<TEvent> where TEvent : IEvent
     {
