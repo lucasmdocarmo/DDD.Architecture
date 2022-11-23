@@ -8,5 +8,6 @@ namespace DDD.Shared.Core.Shared
 {
     public class BaseEntity
     {
+        public  DateOnly Created { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DDD.Shared.Core.Shared.Contracts;
+using DDD.Shared.Core.Shared.Contracts.Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,17 @@ using System.Threading.Tasks;
 
 namespace DDD.Shared.Core.Shared
 {
-    public abstract class ValueObject<T>where T : ValueObject<T>//,//IValueObject
-    {
-        protected abstract IEnumerable<object> GetEqualityComponents();
 
+    public abstract class ValueObject
+    {   
+        protected abstract IEnumerable<object> GetEqualityComponents();
         public override bool Equals(object obj)
         {
+
             if (obj is null || obj.GetType() != GetType())
                 return false;
 
-            var other = (ValueObject<T>)obj;
+            var other = (ValueObject)obj;
 
             return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
         }
@@ -28,7 +30,7 @@ namespace DDD.Shared.Core.Shared
                 .Aggregate((x, y) => x ^ y);
         }
 
-        protected static bool EqualOperator(ValueObject<T> left, ValueObject<T> right)
+        protected static bool EqualOperator(ValueObject left, ValueObject right)
         {
             if (ReferenceEquals(left, null) ^ ReferenceEquals(right, null))
                 return false;
@@ -36,7 +38,7 @@ namespace DDD.Shared.Core.Shared
             return ReferenceEquals(left, right) || left.Equals(right);
         }
 
-        protected static bool NotEqualOperator(ValueObject<T> left, ValueObject<T> right)
+        protected static bool NotEqualOperator(ValueObject left, ValueObject right)
         {
             return !(EqualOperator(left, right));
         }

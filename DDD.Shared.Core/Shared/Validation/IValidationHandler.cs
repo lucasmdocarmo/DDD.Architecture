@@ -12,4 +12,5 @@ namespace DDD.Shared.Core.Shared.Validation
     {
         bool ExecuteValidation<TV, TE>(TV validationObject, TE command) where TV : AbstractValidator<TE> where TE : Command;
     }
+    //RuleFor
 }

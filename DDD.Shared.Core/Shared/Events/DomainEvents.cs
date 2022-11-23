@@ -1,6 +1,5 @@
 ﻿using DDD.Shared.Core.Shared.Contracts.Aggregate;
 using DDD.Shared.Core.Shared.Contracts.Events;
-using DDD.Shared.Core.Shared.Notifications;
 using Shared.Core.Messages;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.Text;
 
 namespace DDD.Shared.Core.Shared.Events
 {
+    //Class For Create Domain Events
     public record DomainEvent<TEntity>(TEntity Entity) : IDomainEvent where TEntity : IEvent
     {
         public DateTime OccorredOn => DateTime.Now;

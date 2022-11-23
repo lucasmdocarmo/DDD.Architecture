@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DDD.Shared.Core.Shared.Contracts.Aggregate
 {
-    internal interface IAggregateRoot
+    public interface IAggregateRoot
     {
+        Guid Id { get; }
+    }
+    public interface IAggregateRoot<out TType> where TType : new()
+    {
+        TType Id { get; }
     }
 }
