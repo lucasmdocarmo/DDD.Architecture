@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace DDD.Shared.Core.Shared.Component
 {
-    internal interface IComponentHandler
+    public interface IComponentHandler
     {
+        
     }
+    public interface IComponentHandler<in TIn, TOut> : IComponentHandler
+    {
+        ValueTask ExecuteAsync<TOut>(TIn input, CancellationToken cancellationToken = default);
+    }
+    public interface IComponentHandler<in TIn>: IComponentHandler
+    {
+        ValueTask ExecuteAsync(TIn input, CancellationToken cancellationToken= default);
+    }
+
 }

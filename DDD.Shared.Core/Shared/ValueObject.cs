@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace DDD.Shared.Core.Shared
 {
-
     public abstract class ValueObject
     {   
         protected abstract IEnumerable<object> GetEqualityComponents();
