@@ -10,14 +10,14 @@ namespace DDD.Domain.Contexts.Courses
 {
     public sealed class Course :BaseEntity,IAggregateRoot
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }    
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public decimal Price { get; private set; }
+        public DateTime StartDate { get; private set; }
+        public DateTime EndDate { get; private set; }
 
-        public IList<Subjects> Subjects { get; set; }
+        public IList<Subjects> Subjects { get; private set; }
 
         public void AddSubjects(Subjects subjects)
         {

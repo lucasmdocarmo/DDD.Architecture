@@ -11,12 +11,12 @@ namespace DDD.Domain.Contexts.Courses
 {
     public sealed class Subjects : BaseEntity,IAggregateRoot
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         
-        public string Code { get; set; }
-        public string Name { get; set; }    
-        public string Description { get; set; }
-        public Schedule Schedule { get; set; }
+        public string Code { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public Schedule Schedule { get; private set; }
 
         public void SetSchedule(DayOfWeek _dayofweek, int ocourrence)
         {

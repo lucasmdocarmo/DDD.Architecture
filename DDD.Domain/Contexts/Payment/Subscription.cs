@@ -11,10 +11,10 @@ namespace DDD.Domain.Contexts.Payments
 {
     public class Subscription : BaseEntity, IAggregateRoot
     {
-        public DateOnly ExpirationDate { get; set; }
-        public DateOnly SignedDate { get; set; }
-        public DateTime LastUpdatedDate { get; set; }
-        public bool Active { get; set; }
+        public DateOnly ExpirationDate { get; private set; }
+        public DateOnly SignedDate { get; private set; }
+        public DateTime LastUpdatedDate { get; private set; }
+        public bool Active { get; private set; }
         private IList<Payment> _payments;
         private IList<Course> _course;
 
